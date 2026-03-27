@@ -1,0 +1,24 @@
+---
+title: "Étienne Sinotte"
+description: PhD Student in Political Science, McGill University
+image: "assets/main_photo.jpeg"
+about: 
+  template: trestles
+  image-shape: rounded
+  image-width: 20em
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/etiennesinotte/
+    - icon: envelope
+      text: Email
+      href: mailto:etienne.sinotte@mail.mcgill.ca
+---
+
+# Welcome!
+
+I am a PhD Student in the [Department of Political Science](https://www.mcgill.ca/politicalscience/) at [McGill University](https://www.mcgill.ca/). I primarily work in comparative politics, with a regional focus on Latin America (and, sometimes, Canada).
+
+My research examines the relationship between displacement, democratic erosion, and social mobilization in Latin America. I ask why states recognize some forms of displacement while rendering others legally invisible, and what this reveals about stratified citizenship and criminal governance patterns in the region. This grows out of earlier empirical work in Peru on collaborative governance, which first drew my attention to the gap between formal institutional frameworks and the communities the state excludes.
+
+I hold an MSc in Political Science from the [Université de Montréal](https://pol.umontreal.ca/accueil/), and a BA in Applied Political Studies from the [Université de Sherbrooke](https://www.usherbrooke.ca/politique-appliquee/).

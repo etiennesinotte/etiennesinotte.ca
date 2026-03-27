@@ -1,0 +1,26 @@
+project:
+  type: website
+  output-dir: docs
+  resources:
+    - CNAME
+
+website:
+  title: "Étienne Sinotte"
+  page-footer:
+    left: "Made with [Quarto](https://quarto.org/)"
+  navbar:
+    pinned: true
+    search: false
+    right:
+      - href: index.qmd
+        text: Home
+      - research.qmd
+
+
+format:
+  html:
+    theme: minty
+    toc: false
+    page-layout: full
+
+editor: visual
