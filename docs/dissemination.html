@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Étienne Sinotte - Research</title>
+<title>Étienne Sinotte - Dissemination</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,6 +24,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -49,7 +51,65 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -74,11 +134,11 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./research.html" aria-current="page"> 
+    <a class="nav-link" href="./research.html"> 
 <span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./dissemination.html"> 
+    <a class="nav-link active" href="./dissemination.html" aria-current="page"> 
 <span class="menu-text">Dissemination</span></a>
   </li>  
 </ul>
@@ -98,7 +158,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Research</h1>
+<h1 class="title">Dissemination</h1>
 </div>
 
 
@@ -115,59 +175,67 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="projects" class="level3">
-<h3 class="anchored" data-anchor-id="projects">Projects</h3>
-<p>Uprooted Democracy: Displacement and the Politics of Recognition</p>
-<ul>
-<li>Examines why states recognize some forms of displacement (climate-, development-, and persecution-led) while rendering others legally invisible, and what this reveals about democratic quality in Latin America</li>
-</ul>
-</section>
-<section id="publications" class="level3">
-<h3 class="anchored" data-anchor-id="publications">Publications</h3>
-<p><strong>Sinotte, Étienne.</strong> (Under review; working paper available). “Making Collaborative Governance Work in Contexts of State Weakness and Disengagement: Peru’s Indigenous COVID-19 Commands.”</p>
-<ul>
-<li>Explains subnational variation the effectiveness of Peru’s indigenous COVID Commands through pre-existing collaborative networks and NGO involvement</li>
-<li>Shows how civil society can sustain coordination in medium-capacity states when the state disengages</li>
-</ul>
-<p>Brouard, François, Natalya Brown, Manuel Litalien and <strong>Étienne Sinotte</strong>. 2025. <a href="https://doi.org/10.4337/9781035338931.00012">“Definitions of northern/rural/remote/peripheric communities in Canada.”</a> In Research Companion to the Periphery and Peripheral Regions: Concepts, Diagnosis, Dilemmas, edited by Jerzy Banski. Edward Elgar Publishing.</p>
-<ul>
-<li>Reviews competing definitions of northern, rural, remote, and peripheric communities in Canada, mapping four key continua (northern/southern, rural/urban, remote/close, peripheric/core)</li>
-<li>Argues that relying on any single classification risks oversimplifying the realities of smaller communities, with consequences for welfare programs and philanthropic efforts</li>
-</ul>
-</section>
-<section id="book-reviews" class="level3">
-<h3 class="anchored" data-anchor-id="book-reviews">Book Reviews</h3>
-<p><strong>Sinotte, Étienne.</strong> 2025. <a href="https://doi.org/10.1093/jrs/feae087">“Climate Displacement By Jamie Draper Oxford, United Kingdom: Oxford University Press, 2023. 272pp. £90.00/ US$115.00. ISBN 978 0192 870162.”</a> <em>Journal of Refugee Studies</em> 38 (3): 813–15.</p>
-<p><strong>Sinotte, Étienne.</strong> 2024. “Recognition Politics: Indigenous Rights and Ethnic Conflict in the Andes: By Lorenza B. Fontana, Cambridge, Cambridge University Press, 2023, 250 Pp., US$99.99 (Hardcover), ISBN 9781009265515.” <em>Canadian Journal of Latin American and Caribbean Studies / Revue Canadienne Des Études Latino-Américaines et Caraïbes</em> 49 (1): 117–19.</p>
-<p><strong>Sinotte, Étienne.</strong> 2023. <a href="https://doi.org/10.7202/1106146ar">“Voice and Inequality: Poverty and Political Participation in Latin American Democracies, de Carew Boulding et Claudio A. Holzner, New York, Oxford University Press, 2021, 244 p.”</a> <em>Politique et Sociétés</em> 42 (3): 218.</p>
-</section>
-<section id="media" class="level3">
-<h3 class="anchored" data-anchor-id="media">Media</h3>
-<p><strong>Sinotte, Étienne.</strong> 2026. <a href="https://doi.org/10.64628/AAM.jxeyj7ppm">“Ousting of Peru’s president points to a deeper&nbsp;crisis.”</a> The Conversation Canada. March 5, 2026.</p>
-</section>
-<section id="grants-and-fellowships" class="level3">
-<h3 class="anchored" data-anchor-id="grants-and-fellowships">Grants and Fellowships</h3>
-<ul>
-<li><p><em>2025-2026</em>&nbsp;Doctoral Research Fellowship from the Interuniversity Research Team on Governance and Inclusion in Latin America (ÉRIGAL)</p></li>
-<li><p><em>2024-2027</em> Canada Graduate Scholarship (Ph.D.; CGS-D) from the Social Sciences and Humanities Research Council of Canada (SSHRC)</p></li>
-<li><p><em>2022-2023</em> Canada Graduate Scholarship (M.A.; CGS-M) from the Social Sciences and Humanities Research Council of Canada (SSHRC)&nbsp;</p></li>
-<li><p><em>2022</em> Discovery Scholarship from the University of Montreal’s School of Graduate and Postdoctoral Studies</p></li>
-</ul>
-</section>
-<section id="affiliations" class="level3">
-<h3 class="anchored" data-anchor-id="affiliations">Affiliations</h3>
-<ul>
-<li><p><a href="https://csdc-cecd.ca/etudiants/?id=697">Member</a>&nbsp;(2025-), Centre for the Study of Democratic Citizenship (CSDC)</p></li>
-<li><p><a href="https://www.mcgillrefugeeresearchgroup.com/members">Member</a>&nbsp;(2025-), McGill Refugee Research Group (MRRG)&nbsp;</p></li>
-<li><p><a href="https://www.erigal.org/en_CA/le-profil/etienne-sinotte">Member</a>&nbsp;(2021-), Interuniversity Research Team on Governance and Inclusion in Latin America (ÉRIGAL)</p></li>
-<li><p>Visiting Scholar (2025), <em>Centro de Investigaciones Sociológicas, Económicas, Políticas y Antropológicas</em>&nbsp;at the&nbsp;<em>Pontificia Universidad Católica del Perú</em>&nbsp;(PUCP-CISEPA)</p></li>
-<li><p><a href="https://chaireparticipation2.odoo.com/etienne-sinotte">Member</a>&nbsp;(2021-2023), Chaire de recherche du Canada Participation et citoyenneté(s)</p></li>
-</ul>
 
 
-</section>
 
-</main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1774584000000" data-listing-file-modified-sort="1774655901551" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1062">
+<div class="thumbnail">
+<p><a href="./posts/CG_en/index.html" class="no-external"></a></p><a href="./posts/CG_en/index.html" class="no-external">
+<p><img src="./posts/CG_en/thumbnail.jpeg" class="thumbnail-image"></p>
+</a><p><a href="./posts/CG_en/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/CG_en/index.html" class="no-external">[EN] Collaborative Governance in La Convención during the COVID-19 Pandemic</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/CG_en/index.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./posts/CG_en/index.html" class="no-external">Executive summary of my findings in my Subnational Variation in Collaborative Governance: Peru’s Indigenous COVID Commands and La&nbsp;Convención’s Participative Legacy project</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/CG_en/index.html" class="no-external">
+<div class="listing-date">
+Mar 27, 2026
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1774584000000" data-listing-file-modified-sort="1774655901471" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1095">
+<div class="thumbnail">
+<p><a href="./posts/CG_es/index.html" class="no-external"></a></p><a href="./posts/CG_es/index.html" class="no-external">
+<p><img src="./posts/CG_es/thumbnail.jpeg" class="thumbnail-image"></p>
+</a><p><a href="./posts/CG_es/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/CG_es/index.html" class="no-external">[ES] Gobernanza colaborativa en La Convención durante la pandemia</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/CG_es/index.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./posts/CG_es/index.html" class="no-external">Resumen ejecutivo de las conclusiones de mi proyecto Variación subnacional en la gobernanza colaborativa: los Comandos Indígenas contra el COVID en Perú y el legado participativo de La Convención.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/CG_es/index.html" class="no-external">
+<div class="listing-date">
+Mar 27, 2026
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

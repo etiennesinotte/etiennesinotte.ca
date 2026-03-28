@@ -6,6 +6,7 @@ project:
 
 website:
   title: "Étienne Sinotte"
+  search: false
   page-footer:
     left: "Made with [Quarto](https://quarto.org/)"
   navbar:
@@ -15,6 +16,7 @@ website:
       - href: index.qmd
         text: Home
       - research.qmd
+      - dissemination.qmd
 
 
 format:
