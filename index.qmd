@@ -7,12 +7,15 @@ about:
   image-shape: round
   image-width: 20em
   links:
-    - icon: linkedin
-      text: LinkedIn
-      href: https://www.linkedin.com/in/etiennesinotte/
     - icon: envelope
       text: Email
       href: mailto:etienne.sinotte@mail.mcgill.ca
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/etiennesinotte/
+    - icon: orcid
+      text: ORCID
+      href: https://orcid.org/0000-0002-1198-8232
 ---
 
 # Welcome!
