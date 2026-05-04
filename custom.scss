@@ -1,0 +1,155 @@
+/*-- scss:uses --*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+/*-- scss:defaults --*/
+
+// Colors
+$body-bg: #fbfbfb;
+$body-color: #2a2a2a;
+$link-color: #556b5a;
+$link-hover-color: #365240;
+
+// Fonts
+$font-family-sans-serif: 'Open Sans', sans-serif;
+$font-family-serif: 'Spectral', serif;
+$font-family-base: 'Open Sans', sans-serif;
+$headings-font-family: 'Spectral', serif;
+
+// Font sizes & weights
+$font-size-base: 1.05rem;
+$font-weight-base: 350;
+$headings-font-weight: 400;
+$line-height-base: 1.75;
+
+// Navbar
+$navbar-bg: #556b5a;
+$navbar-fg: #ffffff;
+
+/*-- scss:rules --*/
+
+// Headings
+h1, .h1,
+h2, .h2 {
+  color: #7a9e7e;
+  letter-spacing: -0.02em;
+}
+
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  color: #2a2a2a;
+  letter-spacing: -0.01em;
+}
+
+// Body
+body {
+  font-family: $font-family-base;
+  font-weight: $font-weight-base;
+}
+
+p {
+  line-height: $line-height-base;
+}
+
+// Navbar
+.navbar {
+  font-family: 'Spectral', serif;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  border-bottom: none;
+
+  // Name/brand in navbar
+  .navbar-brand {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  // Nav links
+  .nav-link {
+    font-family: 'Spectral', serif;
+    font-size: 1rem;
+    color: #ffffff;
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.75);
+    }
+  }
+}
+
+// Links
+a {
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+
+// Code
+pre, code {
+  font-size: 0.9em;
+  background-color: #ebebeb;
+  border-radius: 4px;
+}
+
+// Blockquotes
+blockquote {
+  border-left: 3px solid #7a9e7e;
+  padding-left: 1.2rem;
+  color: #555;
+  font-style: italic;
+}
+
+// Buttons — trestles about layout links + standard .btn
+.btn,
+.about-link,
+.quarto-about-trestles .about-link {
+  display: inline-block;
+  border-radius: 999px;
+  background-color: #7a9e7e;
+  color: #ffffff !important;
+  border: none;
+  font-family: 'Spectral', serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+  padding: 0.35rem 1.1rem;
+  transition: background-color 0.2s ease;
+  text-decoration: none !important;
+
+  // Hide icons
+  i, svg, .bi, .about-link-icon {
+    display: none !important;
+  }
+
+  &:hover {
+    background-color: #365240;
+    color: #ffffff !important;
+  }
+}
+
+// Remove vertical divider between about-page columns
+.quarto-about-trestles .about-entity,
+.quarto-about-solana .about-entity,
+.quarto-about-marquee .about-entity,
+.quarto-about-broadside .about-entity {
+  border-right: none !important;
+}
+
+// Catch-all for any column border Quarto renders
+[class*="quarto-about"] > div {
+  border-right: none !important;
+  border-left: none !important;
+}
+
+// Footer
+.nav-footer {
+  font-family: 'Spectral', serif;
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: #888;
+  border-top: none;
+}

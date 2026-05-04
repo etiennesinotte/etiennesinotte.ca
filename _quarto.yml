@@ -7,8 +7,6 @@ project:
 website:
   title: "Étienne Sinotte"
   search: false
-  page-footer:
-    left: "Made with [Quarto](https://quarto.org/)"
   navbar:
     pinned: true
     search: false
@@ -21,7 +19,9 @@ website:
 
 format:
   html:
-    theme: minty
+    theme: 
+      - default
+      - custom.scss
     toc: false
     page-layout: full
 
