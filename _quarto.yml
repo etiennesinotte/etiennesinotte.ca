@@ -6,6 +6,7 @@ project:
 
 website:
   title: "Étienne Sinotte"
+  favicon: "assets/favicon.png"
   search: false
   navbar:
     pinned: true
