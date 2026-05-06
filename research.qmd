@@ -7,18 +7,21 @@ body-class: "page-research"
 
 #### Uprooted Democracy: Displacement and the Politics of Recognition (Research Project)
 
--   Examines why states recognize some forms of displacement (climate-, development-, and persecution-led) while rendering others legally invisible, and what this reveals about democratic quality in Latin America
+*Examines why states recognize some forms of displacement (climate-, development-, and persecution-led) while rendering others legally invisible, and what this reveals about democratic quality in Latin America.*
+
+## Working Papers
 
 #### Making Collaborative Governance Work in Contexts of State Weakness and Disengagement: Peru’s Indigenous COVID-19 Command (Under Review)
 
--   Explains subnational variation the effectiveness of Peru's indigenous COVID Commands through pre-existing collaborative networks and NGO involvement
--   Shows how civil society can sustain coordination in medium-capacity states when the state disengages
+*Peru's Indigenous COVID Commands (ICCs) varied widely in effectiveness, and La Convención's ICC outperformed others despite its peripheral status due to a pre-existing legacy of health collaboration and unusually strong NGO involvement. These NGOs compensated for chronic state disengagement by sustaining coordination and mediating between the state and indigenous communities, producing a hybrid of community-led and symbolic coproduction that yielded comparatively high vaccination rates.*
 
 ## Chapters
 
 #### [Definitions of northern/rural/remote/peripheric communities in Canada](https://doi.org/10.4337/9781035338931.00012), in the *Research Companion to the Periphery and Peripheral Regions: Concepts, Diagnosis, Dilemmas, edited by Jerzy Banski*, 2025. 
 
 (with François Brouard, Natalya Brown, and Manuel Litalien)
+
+*Inconsistent definitions for northern, rural, and remote Canadian communities lead to oversimplified classifications that ignore regional diversity and result in poorly tailored public policies and a philanthropic sector which neglects smaller communities in favor of urban centers. A nuanced, multi-factor approach is essential to accurately identify community needs and ensure the equitable delivery of social programs.*
 
 ## Book Reviews
 
