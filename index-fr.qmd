@@ -1,0 +1,27 @@
+---
+title: "Étienne Sinotte"
+description: Doctorant en science politique, Université McGill
+image: "assets/main_photo.jpeg"
+about:
+  template: trestles
+  image-shape: round
+  image-width: 20em
+  links:
+    - icon: envelope
+      text: Courriel
+      href: mailto:etienne.sinotte@mail.mcgill.ca
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/etiennesinotte/
+    - icon: orcid
+      text: ORCID
+      href: https://orcid.org/0000-0002-1198-8232
+---
+
+# Bienvenue!
+
+Je suis doctorant au [Département de science politique](https://www.mcgill.ca/politicalscience/) de l'[Université McGill](https://www.mcgill.ca/). Je travaille principalement en politique comparée, avec un focus régional sur l'Amérique latine.
+
+Ma recherche porte sur les rapports entre le déplacement forcé, l'extractivisme et les régimes de citoyenneté en Amérique latine. Je m'intéresse particulièrement à la manière dont la présence (ou l'absence) de l'État détermine qui est gouverné, et par qui, dans les périphéries où s'exercent l'extraction et la gouvernance criminelle. Ce projet suit dans les pas d'une recherche précédente menée au Pérou sur la gouvernance collaborative, qui a d'abord attiré mon attention sur ce qui arrive lorsque l'État se retire, et sur les réseaux qui comblent ce vide.
+
+Je détiens une maîtrise (M. Sc.) en science politique de l'[Université de Montréal](https://pol.umontreal.ca/accueil/) et un baccalauréat en études politiques appliquées de l'[Université de Sherbrooke](https://www.usherbrooke.ca/politique-appliquee/).

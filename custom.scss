@@ -76,6 +76,27 @@ p {
       color: rgba(255, 255, 255, 0.75);
     }
   }
+
+  // Dropdown menu (e.g. FR/ES)
+  .dropdown-menu {
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5;
+
+    .dropdown-item {
+      font-family: 'Spectral', serif;
+      color: #2a2a2a;
+      text-decoration: none;
+
+      &:hover,
+      &:focus,
+      &:active,
+      &.active {
+        background-color: #7a9e7e;
+        color: #ffffff;
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 // Links

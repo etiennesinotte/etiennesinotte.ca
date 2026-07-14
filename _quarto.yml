@@ -15,7 +15,12 @@ website:
       - href: index.qmd
         text: Home
       - research.qmd
-      - dissemination.qmd
+      - text: "FR/ES"
+        menu:
+          - href: index-fr.qmd
+            text: "(FR) À propos"
+          - href: index-es.qmd
+            text: "(ES) Sobre mí"
 
 
 format:
