@@ -1,6 +1,6 @@
 ---
 title: "Étienne Sinotte"
-description: PhD Student in Political Science, McGill University
+description: PhD Candidate in Political Science, McGill University
 image: "assets/main_photo.jpeg"
 about: 
   template: trestles
