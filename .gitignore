@@ -4,3 +4,9 @@
 .Ruserdata
 
 /.quarto/
+
+# macOS
+.DS_Store
+
+# full-size original photo (the site uses the light assets/profile.jpg)
+assets/profile-original.jpg

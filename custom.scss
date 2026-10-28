@@ -1,102 +1,70 @@
 /*-- scss:uses --*/
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
 
 /*-- scss:defaults --*/
 
 // Colors
 $body-bg: #fbfbfb;
 $body-color: #2a2a2a;
-$link-color: #556b5a;
-$link-hover-color: #365240;
+$accent: #5b7a60;   // the one accent green, used everywhere
+$link-color: $accent;
+$link-hover-color: $accent;
+$rule: #e2e6e2;
+$muted: #5f5f5f;
 
-// Fonts
-$font-family-sans-serif: 'Open Sans', sans-serif;
+// Fonts: Spectral (serif) only for the name and headings; the system font for everything else
+// (San Francisco on Mac/iPhone, Segoe UI on Windows, Roboto on Android)
+$system-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-sans-serif: $system-sans;
 $font-family-serif: 'Spectral', serif;
-$font-family-base: 'Open Sans', sans-serif;
+$font-family-base: $system-sans;
 $headings-font-family: 'Spectral', serif;
 
-// Font sizes & weights
-$font-size-base: 1.05rem;
-$font-weight-base: 350;
+// Type scale — one text size everywhere, three heading sizes
+$font-size-base: 1rem;
+$font-weight-base: 400;   // running text
+$font-weight-entry: 500;  // entry titles (papers, grants, etc.)
 $headings-font-weight: 400;
-$line-height-base: 1.75;
+$line-height-base: 1.7;
 
-// Navbar
-$navbar-bg: #556b5a;
-$navbar-fg: #ffffff;
+$size-text: 1rem;      // all running text: profile, menu, body, lists
+$size-desc: 0.9rem;    // description under your name (fits on two lines)
+$size-button: 0.85rem; // CV / LinkedIn / Email / ORCID buttons
+$size-h3: 1.4rem;      // Working Papers, Chapters, Book Reviews
+$size-h2: 1.85rem;     // section headers
+$size-name: 1.75rem;   // your name in the sidebar
+
+// Layout
+$sidebar-width: 12rem;   // = photo width = width of the name
+$main-width: 60rem;      // upper limit; the column normally fills the space available
+$top-space: 2.75rem;     // space under the navbar; top of photo = top of first heading
+$nav-height: 3.4rem;     // green navbar with the section menu
+$mobile-break: 860px;
+
+// Where your name appears:
+//   "profile" = under the photo only (A)
+//   "both"    = in the navbar and under the photo (B)
+//   "navbar"  = in the navbar only (C)
+$name-placement: "profile";
 
 /*-- scss:rules --*/
 
-// Headings
-h1, .h1,
-h2, .h2 {
-  color: #7a9e7e;
-  letter-spacing: -0.02em;
+html {
+  scroll-behavior: smooth;
 }
 
-h3, .h3,
-h4, .h4,
-h5, .h5,
-h6, .h6 {
-  color: #2a2a2a;
-  letter-spacing: -0.01em;
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }
 
-// Body
 body {
   font-family: $font-family-base;
   font-weight: $font-weight-base;
+  font-size: $size-text;
 }
 
 p {
   line-height: $line-height-base;
-}
-
-// Navbar
-.navbar {
-  font-family: 'Spectral', serif;
-  font-weight: 400;
-  letter-spacing: 0.01em;
-  border-bottom: none;
-
-  // Name/brand in navbar
-  .navbar-brand {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #ffffff;
-  }
-
-  // Nav links
-  .nav-link {
-    font-family: 'Spectral', serif;
-    font-size: 1rem;
-    color: #ffffff;
-
-    &:hover {
-      color: rgba(255, 255, 255, 0.75);
-    }
-  }
-
-  // Dropdown menu (e.g. FR/ES)
-  .dropdown-menu {
-    background-color: #ffffff;
-    border: 1px solid #e5e5e5;
-
-    .dropdown-item {
-      font-family: 'Spectral', serif;
-      color: #2a2a2a;
-      text-decoration: none;
-
-      &:hover,
-      &:focus,
-      &:active,
-      &.active {
-        background-color: #7a9e7e;
-        color: #ffffff;
-        text-decoration: none;
-      }
-    }
-  }
 }
 
 // Links
@@ -119,73 +87,478 @@ pre, code {
 
 // Blockquotes
 blockquote {
-  border-left: 3px solid #7a9e7e;
+  border-left: 3px solid $accent;
   padding-left: 1.2rem;
   color: #555;
   font-style: italic;
 }
 
-// Buttons — trestles about layout links + standard .btn
-.btn,
-.about-link,
-.quarto-about-trestles .about-link {
-  display: inline-block;
-  border-radius: 999px;
-  background-color: #7a9e7e;
-  color: #ffffff !important;
-  border: none;
-  font-family: 'Spectral', serif;
-  font-weight: 400;
-  font-size: 0.9rem;
-  padding: 0.35rem 1.1rem;
-  transition: background-color 0.2s ease;
-  text-decoration: none !important;
+/* ------------------------------------------------------------------
+   Page layout: green navbar (menu) on top;
+   sticky profile on the left | long scrolling page on the right
+   ------------------------------------------------------------------ */
 
-  // Hide icons
-  i, svg, .bi, .about-link-icon {
-    display: none !important;
+#quarto-content {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+#quarto-content > .site-wrap {
+  margin-top: 0;
+  padding-top: $nav-height;   // the page starts under the navbar
+}
+
+.site-wrap {
+  display: grid;
+  grid-template-columns: $sidebar-width minmax(0, $main-width);
+  column-gap: clamp(3rem, 7vw, 7rem);
+  justify-content: center;
+  // Side margins are 3/4 of what a fixed 62.5rem-wide page would leave
+  max-width: calc(25vw + 46.875rem + 4rem);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.site-sidebar {
+  position: sticky;
+  top: $nav-height;
+  z-index: 10;             // keeps the navbar (which lives in the sidebar files) above the page
+  align-self: start;
+  max-height: calc(100vh - #{$nav-height});
+  overflow-y: auto;
+  padding: $top-space 0 2rem;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar { display: none; }
+}
+
+.site-main {
+  min-width: 0;
+  padding: $top-space 0 6rem;
+}
+
+// ---- Profile -------------------------------------------------------
+
+.profile {
+  p { margin: 0; line-height: inherit; }
+}
+
+.profile-photo {
+  display: block;
+  width: $sidebar-width;
+  height: $sidebar-width;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.4rem;
+}
+
+.profile-name {
+  font-family: $font-family-serif;
+  font-size: $size-name;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  color: $accent;
+  margin-bottom: 0.5rem;
+}
+
+.profile-desc {
+  font-size: $size-desc;
+  line-height: 1.5;
+  color: $body-color;
+  text-wrap: balance;   // even line lengths if it wraps to three lines
+}
+
+.profile-links {
+  // Buttons side by side, wrapping onto a second row; each row stretches to the photo's width
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.2rem 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
 
-  &:hover {
-    background-color: #365240;
-    color: #ffffff !important;
+  li {
+    flex: 1 1 auto;
+    margin: 0;
+    font-size: $size-button;
+    line-height: 1.4;
+  }
+
+  // First button (Email) gets its own row; the others share the row below
+  li:first-child { flex-basis: 100%; }
+
+  // Outlined buttons, filled on hover
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.5rem;
+    border: 1px solid $accent;
+    border-radius: 6px;
+    color: $accent;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+      background: $accent;
+      color: $body-bg;
+      text-decoration: none;
+
+      .icon-orcid::before { color: $accent; }
+    }
+  }
+
+  .bi {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 0.9rem;
+    height: 0.9rem;
+    font-size: 0.85rem;
+    line-height: 1;
   }
 }
 
-// Remove vertical divider between about-page columns
-.quarto-about-trestles .about-entity,
-.quarto-about-solana .about-entity,
-.quarto-about-marquee .about-entity,
-.quarto-about-broadside .about-entity {
-  border-right: none !important;
+// ORCID "iD" badge (Bootstrap Icons has no ORCID icon)
+.icon-orcid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 0.85rem;
+  height: 0.85rem;
+  margin: 0 0.025rem;
+  border-radius: 50%;
+  background: currentColor;
+
+  &::before {
+    content: "iD";
+    color: $body-bg;
+    font: 700 0.45rem/1 $font-family-sans-serif;
+    letter-spacing: -0.02em;
+  }
 }
 
-// Catch-all for any column border Quarto renders
-[class*="quarto-about"] > div {
-  border-right: none !important;
-  border-left: none !important;
+// ---- Language toggle (EN | FR | ES) -----------------------------------------
+
+.lang-switch {
+  margin-top: 0.5rem;
+
+  p {
+    display: flex;
+    margin: 0;
+    border: 1px solid $accent;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  a {
+    flex: 1;
+    padding: 0.2rem 0;
+    text-align: center;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: $accent;
+
+    & + a { border-left: 1px solid $accent; }
+
+    &:hover {
+      background: rgba($accent, 0.1);
+      text-decoration: none;
+    }
+
+    &.on {
+      background: $accent;
+      color: $body-bg;
+      font-weight: 600;
+    }
+  }
 }
 
-// Page titles — Research & Dissemination pages
-#title-block-header h1.title {
-  font-size: 2.8rem;
-  text-align: center;
+// ---- Navbar with the section menu --------------------------------------------
+
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: $nav-height;
+  background: $accent;
 }
 
-// Trestles buttons — front page
-.about-link {
-  border-radius: 999px;
+// Same columns as the page, so the menu lines up with the main text
+.nav-in {
+  display: grid;
+  grid-template-columns: $sidebar-width minmax(0, $main-width);
+  column-gap: clamp(3rem, 7vw, 7rem);
+  justify-content: center;
+  height: 100%;
+  max-width: calc(25vw + 46.875rem + 4rem);
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
-.about-link-text {
-  font-family: 'Open Sans', sans-serif;
+.nav-name {
+  align-self: center;
+  font-family: $font-family-serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  color: #fff;
+
+  p { margin: 0; line-height: 1.2; }
 }
 
-// Footer
-.nav-footer {
-  font-family: 'Spectral', serif;
-  font-size: 0.85rem;
-  font-weight: 300;
-  color: #888;
-  border-top: none;
+.site-menu {
+  min-width: 0;
+  height: 100%;
+
+  ul {
+    display: flex;
+    gap: clamp(1.25rem, 1.9vw, 2rem);   // tightens a little on smaller laptops so the menu fits
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar { display: none; }
+  }
+
+  li {
+    display: flex;
+    margin: 0;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    font-size: $size-text;
+    color: rgba(255, 255, 255, 0.78);
+
+    &:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    // The section on screen: white, underlined, slightly bolder (without shifting the others)
+    &.active {
+      color: #fff;
+      border-bottom-color: #fff;
+      -webkit-text-stroke: 0.35px currentColor;
+    }
+  }
+}
+
+@if $name-placement == "profile" {
+  .nav-name { visibility: hidden; }
+}
+
+@if $name-placement == "navbar" {
+  .profile-name { display: none; }
+  .profile-photo { margin-bottom: 1.1rem; }
+}
+
+// ---- Content sections ---------------------------------------------------
+
+.site-main {
+  // Jumping to a section lines its header up with the top of the photo
+  section.level2 {
+    margin-top: 3.5rem;
+    scroll-margin-top: calc(#{$nav-height} + #{$top-space});
+
+    &:first-child { margin-top: 0; }
+  }
+
+  // Links inside running text (About, Teaching & Coordination) are bold
+  p a { font-weight: 600; }
+
+  h2 {
+    margin: 0 0 1.25rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid $rule;
+    font-size: $size-h2;
+    font-weight: 600;
+    line-height: 1.15;
+    color: $accent;
+    letter-spacing: -0.02em;
+  }
+
+  // Sub-headings inside a section (Working Papers, Chapters, Book Reviews)
+  h3 {
+    margin: 2.25rem 0 0.75rem;
+    font-size: $size-h3;
+    font-weight: 400;
+    line-height: 1.25;
+    color: $accent;
+    letter-spacing: -0.01em;
+  }
+
+  h2 + section.level3 h3 { margin-top: 0.25rem; }
+
+  // Individual entries (projects, papers, chapters, reviews, media)
+  h4 {
+    margin: 1.25rem 0 0.3rem;
+    font-family: $font-family-sans-serif;
+    font-size: $size-text;
+    font-weight: $font-weight-entry;
+    line-height: 1.6;
+    color: $body-color;
+
+    a { color: $accent; }
+  }
+
+  h2 + h4,
+  h3 + h4 { margin-top: 0; }
+
+  h4 + p { margin-top: 0; }
+
+  // Lists (grants, affiliations)
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  li {
+    position: relative;
+    padding-left: 1.25rem;
+    margin-bottom: 0.65rem;
+    line-height: 1.6;
+
+    > p { margin: 0; line-height: 1.6; }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.8em;
+      width: 0.55rem;
+      height: 1px;
+      background: $accent;
+    }
+  }
+}
+
+// ---- Short screens (laptops) ---------------------------------------------------
+
+@media (min-width: $mobile-break + 1) and (max-height: 760px) {
+  .site-sidebar { padding-top: 2rem; padding-bottom: 1rem; }
+  .site-main { padding-top: 2rem; }
+  .site-main section.level2 { scroll-margin-top: calc(#{$nav-height} + 2rem); }
+}
+
+// ---- Phones and small tablets -----------------------------------------------
+
+@media (max-width: $mobile-break) {
+  .site-wrap {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+
+  // Let the sidebar's parts flow into the page
+  .site-sidebar { display: contents; }
+
+  .profile {
+    order: 0;
+    display: grid;
+    grid-template-columns: 6rem minmax(0, 1fr);
+    grid-template-areas:
+      "photo name"
+      "photo desc"
+      "links links";
+    column-gap: 1.1rem;
+    align-items: center;
+    padding-top: 1.75rem;
+
+    > p:first-child { grid-area: photo; }
+  }
+
+  .profile-photo {
+    width: 6rem;
+    height: 6rem;
+    margin: 0;
+  }
+
+  .profile-name {
+    grid-area: name;
+    align-self: end;
+    font-size: 1.7rem;
+    margin-bottom: 0.2rem;
+    white-space: normal;
+  }
+
+  .profile-desc {
+    grid-area: desc;
+    align-self: start;
+  }
+
+  .lang-switch { grid-column: 1 / -1; }
+
+  .profile-links {
+    grid-area: links;
+
+    ul { margin-top: 1rem; }
+
+    // two buttons per row
+    li { flex-basis: calc(50% - 0.25rem); }
+  }
+
+  .nav-in {
+    display: flex;
+    gap: 1.25rem;
+    padding: 0 1rem;
+  }
+
+  .nav-name {
+    flex: none;
+    font-size: 1.15rem;
+  }
+
+  .site-menu {
+    flex: 1;
+
+    ul { gap: 1.4rem; }
+  }
+
+  @if $name-placement == "profile" {
+    .nav-name { display: none; }
+  }
+
+  @if $name-placement == "navbar" {
+    .profile {
+      grid-template-areas:
+        "photo desc"
+        "links links";
+    }
+
+    .profile-desc { align-self: center; }
+  }
+
+  .site-main {
+    order: 2;
+    padding: 2rem 0 4rem;
+
+    section.level2 {
+      margin-top: 2.75rem;
+      scroll-margin-top: calc(#{$nav-height} + 1.5rem);
+
+      &:first-child { margin-top: 0; }
+    }
+
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.3rem; }
+  }
 }

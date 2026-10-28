@@ -1,0 +1,66 @@
+---
+pagetitle: "Étienne Sinotte"
+lang: es
+description: "Candidato a doctor en Ciencia Política en la Universidad McGill"
+image: "assets/profile.jpg"
+---
+
+:::: site-wrap
+::: site-sidebar
+{{< include _sidebar-es.qmd >}}
+:::
+
+::: site-main
+## Sobre mí {#about}
+
+Soy candidato a doctor en el [Departamento de Ciencia Política](https://www.mcgill.ca/politicalscience/) de la [Universidad McGill](https://www.mcgill.ca/). Trabajo principalmente en política comparada, con un enfoque regional en América Latina. Tengo una maestría en Ciencia Política de la [Universidad de Montreal](https://pol.umontreal.ca/accueil/) y una licenciatura en Estudios Políticos Aplicados de la [Universidad de Sherbrooke](https://www.usherbrooke.ca/politique-appliquee/).
+
+Mi investigación examina la relación entre el desplazamiento, el extractivismo, la gobernanza criminal y la ciudadanía democrática en América Latina. En particular, analizo cómo la presencia o la ausencia del Estado determina quién es gobernado, y por quién, en sus márgenes extractivos y criminales. Este proyecto surge de un trabajo de campo previo en el Perú sobre gobernanza colaborativa, que despertó mi interés por las redes que ocupan el espacio donde el Estado se retira.
+
+Estoy afiliado a la [Équipe de recherche sur l'inclusion et la gouvernance en Amérique latine](https://www.erigal.org/en_CA/le-profil/etienne-sinotte) (ÉRIGAL), al [McGill Refugee Research Group](https://www.mcgillrefugeeresearchgroup.com/members) (MRRG) y al [Centre for the Study of Democratic Citizenship](https://csdc-cecd.ca/etudiants/?id=697) (CSDC).
+
+## Publicaciones {#publications}
+
+### Artículos
+
+#### Sustaining Coproduction Despite Intermittent State Disengagement: Peru's Indigenous COVID Commands, en *Latin American Politics and Society*, en producción.
+
+Durante la pandemia de COVID-19, los Comandos COVID Indígenas (CCI) del Perú coordinaron la respuesta de emergencia en las comunidades amazónicas, con resultados territorialmente desiguales. Este artículo analiza el funcionamiento del CCI de La Convención (Cusco), más eficaz que otros gracias a una colaboración previa en salud y a ONG arraigadas y con recursos, que sostuvieron la coproducción allí donde la participación del Estado era intermitente. Muestra además cómo los actores no estatales pueden mejorar la implementación de políticas de salud en Estados de baja capacidad.
+
+### Capítulos
+
+#### [Definitions of northern/rural/remote/peripheric communities in Canada](https://doi.org/10.4337/9781035338931.00012), en el *Research Companion to the Periphery and Peripheral Regions: Concepts, Diagnosis, Dilemmas*, editado por Jerzy Bański, 2025.
+
+*(con François Brouard, Natalya Brown y Manuel Litalien)*
+
+Las definiciones inconsistentes de las comunidades del norte, rurales y remotas de Canadá conducen a clasificaciones simplificadas que ignoran la diversidad regional. De ello resultan políticas públicas mal adaptadas y un sector filantrópico que descuida a las comunidades más pequeñas en favor de los centros urbanos. Un enfoque matizado y multifactorial es esencial para identificar con precisión las necesidades de las comunidades y garantizar una prestación equitativa de los programas sociales.
+
+### Reseñas
+
+#### [*Climate Displacement* de Jamie Draper](https://doi.org/10.1093/jrs/feaf008), en el *Journal of Refugee Studies*, 2025.
+
+#### [*Recognition Politics: Indigenous Rights and Ethnic Conflict in the Andes* de Lorenza Fontana](https://doi.org/10.1080/08263663.2023.2281102), en el *Canadian Journal of Latin American and Caribbean Studies*, 2024.
+
+#### [*Voice and Inequality: Poverty and Political Participation in Latin American Democracies* de Carew Boulding y Claudio Holzner](https://doi.org/10.7202/1106146ar), en *Politique et Sociétés*, 2023.
+
+### Divulgación
+
+#### [Ousting of Peru’s president points to a deeper crisis](https://doi.org/10.64628/AAM.jxeyj7ppm), en *The Conversation Canada*, 5 de marzo de 2026.
+
+## Becas seleccionadas {#selectedgrants}
+
+#### Doctoral Research Fellowship, [Équipe de recherche sur l'inclusion et la gouvernance en Amérique latine](https://www.erigal.org/en_CA) (ÉRIGAL) (2025-2026)
+
+#### Canada Graduate Scholarship (Ph.D.; CGS-D), [Social Sciences and Humanities Research Council of Canada](https://sshrc-crsh.canada.ca/en.aspx) (SSHRC) (2024-2027)
+
+#### Canada Graduate Scholarship (M.A.; CGS-M), [Social Sciences and Humanities Research Council of Canada](https://sshrc-crsh.canada.ca/en.aspx) (SSHRC) (2022-2023)
+
+#### Discovery Scholarship, School of Graduate and Postdoctoral Studies, [Universidad de Montreal](https://www.umontreal.ca)
+
+## Docencia y coordinación {#teachingandcoordination}
+
+He sido conferencista invitado y asistente de docencia en diversos cursos de ciencia política en la Universidad McGill y en la Universidad de Montreal, sobre temas como la política latinoamericana, la política canadiense y los métodos de investigación (cualitativos y mixtos).
+
+También he coordinado varios eventos de gran envergadura. Más recientemente, organicé los congresos anuales de la [Diamond-Brown Chair on Democratic Studies](https://www.mcgill.ca/politicalscience/juan-pablo-luna) de la Universidad McGill (dirigida por el profesor Juan Pablo Luna; ediciones 2025 y 2026). Anteriormente, contribuí a la organización del coloquio sobre derechos humanos en América Latina de la [Chaire de recherche du Canada Participation et citoyenneté(s)](https://recherche.umontreal.ca/unite-de-recherche/is/ur14522/) (Universidad de Montreal, 2023), del festival de cine *(In)visibilités, genre et luttes en Amérique latine* (Universidad de Montreal, 2022) y de los congresos anuales de la [Société québécoise de science politique](https://sqsp.uqam.ca) (SQSP) (ediciones 2021 y 2022).
+:::
+::::

@@ -6,29 +6,19 @@ project:
 
 website:
   title: "Étienne Sinotte"
+  description: "PhD Candidate in Political Science at McGill University"
   favicon: "assets/favicon.png"
   search: false
-  navbar:
-    pinned: true
-    search: false
-    right:
-      - href: index.qmd
-        text: Home
-      - research.qmd
-      - text: "FR/ES"
-        menu:
-          - href: index-fr.qmd
-            text: "(FR) À propos"
-          - href: index-es.qmd
-            text: "(ES) Sobre mí"
-
+  page-navigation: false
 
 format:
   html:
-    theme: 
+    theme:
       - default
       - custom.scss
     toc: false
-    page-layout: full
+    page-layout: custom
+    anchor-sections: false
+    include-after-body: _scrollspy.html
 
 editor: visual

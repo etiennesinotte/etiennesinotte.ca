@@ -1,0 +1,36 @@
+::: profile
+![](assets/profile.jpg){.profile-photo fig-alt="Retrato de Étienne Sinotte"}
+
+::: {.profile-name role="heading" aria-level="1"}
+Étienne Sinotte
+:::
+
+::: profile-desc
+Candidato a doctor en Ciencia Política en la Universidad McGill
+:::
+
+::: profile-links
+-   [<i class="bi bi-envelope"></i>Correo](mailto:etienne.sinotte@mail.mcgill.ca)
+-   [<i class="bi bi-linkedin"></i>LinkedIn](https://www.linkedin.com/in/etiennesinotte/)
+-   [<i class="icon-orcid"></i>ORCID](https://orcid.org/0000-0002-1198-8232)
+:::
+
+::: {.lang-switch role="navigation" aria-label="Idioma"}
+[EN](index.html){title="English"} [FR](indexFR.html){title="Français"} [ES](indexES.html){.on aria-current="page" title="Español"}
+:::
+:::
+
+::: site-nav
+::: nav-in
+::: nav-name
+Étienne Sinotte
+:::
+
+::: {.site-menu role="navigation" aria-label="Secciones"}
+-   [Sobre mí](#about)
+-   [Publicaciones](#publications)
+-   [Becas seleccionadas](#selectedgrants)
+-   [Docencia y coordinación](#teachingandcoordination)
+:::
+:::
+:::

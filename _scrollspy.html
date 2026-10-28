@@ -1,0 +1,73 @@
+<script>
+// Highlights the sidebar menu item for the section currently on screen.
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll('.site-menu a[href^="#"]'));
+  if (!links.length) return;
+
+  var items = [];
+  links.forEach(function (a) {
+    var el = document.getElementById(decodeURIComponent(a.getAttribute('href').slice(1)));
+    if (el) items.push({ a: a, el: el });
+    // Sections that are not on this page (e.g. on the FR/ES pages) live on the main page
+    else a.setAttribute('href', 'index.html' + a.getAttribute('href'));
+  });
+  if (!items.length) return;
+
+  var bar = document.querySelector('.site-menu ul');
+  var current = null, locked = null, unlockTimer = null;
+
+  function setActive(item) {
+    if (item === current) return;
+    current = item;
+    links.forEach(function (a) { a.classList.remove('active'); a.removeAttribute('aria-current'); });
+    if (!item) return;
+    item.a.classList.add('active');
+    item.a.setAttribute('aria-current', 'location');
+    // When the menu is too wide for the screen (phones), keep the active item in view
+    if (bar && bar.scrollWidth > bar.clientWidth) {
+      bar.scrollTo({ left: Math.max(0, item.a.parentElement.offsetLeft - bar.offsetLeft - 16), behavior: 'smooth' });
+    }
+  }
+
+  function update() {
+    if (locked) return;
+    var line = window.innerHeight * 0.3, active = items[0];
+    items.forEach(function (it) { if (it.el.getBoundingClientRect().top <= line) active = it; });
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
+      active = items[items.length - 1];
+    }
+    setActive(active);
+  }
+
+  // Scroll within the page on click (works whether the URL is / or /index.html);
+  // the clicked item stays highlighted while the page scrolls to it
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  items.forEach(function (it) {
+    it.a.addEventListener('click', function (e) {
+      if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      e.preventDefault();
+      locked = it;
+      setActive(it);
+      it.el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+      if (history.pushState) history.pushState(null, '', '#' + it.el.id);
+      clearTimeout(unlockTimer);
+      unlockTimer = setTimeout(function () { locked = null; }, 1200);
+    });
+  });
+
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (locked) {
+      clearTimeout(unlockTimer);
+      unlockTimer = setTimeout(function () { locked = null; }, 200);
+      return;
+    }
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(function () { ticking = false; update(); });
+    }
+  }, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
