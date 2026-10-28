@@ -32,7 +32,7 @@ $size-desc: 0.9rem;    // description under your name (fits on two lines)
 $size-button: 0.85rem; // CV / LinkedIn / Email / ORCID buttons
 $size-h3: 1.4rem;      // Working Papers, Chapters, Book Reviews
 $size-h2: 1.85rem;     // section headers
-$size-name: 1.75rem;   // your name in the sidebar
+$size-name: $size-h2;  // your name in the sidebar: same size as the section headers
 
 // Layout
 $sidebar-width: 12rem;   // = photo width = width of the name
@@ -120,13 +120,16 @@ blockquote {
 }
 
 .site-sidebar {
+  // The box reaches 2.5rem into the gap (without moving anything), so the name and
+  // description can run slightly past the photo without being cut off
+  margin-right: -2.5rem;
   position: sticky;
   top: $nav-height;
   z-index: 10;             // keeps the navbar (which lives in the sidebar files) above the page
   align-self: start;
   max-height: calc(100vh - #{$nav-height});
   overflow-y: auto;
-  padding: $top-space 0 2rem;
+  padding: $top-space 2.5rem 2rem 0;   // right padding = the margin above
   scrollbar-width: none;
 
   &::-webkit-scrollbar { display: none; }
@@ -164,10 +167,12 @@ blockquote {
 }
 
 .profile-desc {
+  // May run about 2rem past the photo, into the empty gap, so every language fits on two lines
+  width: calc(100% + 2rem);
   font-size: $size-desc;
   line-height: 1.5;
   color: $body-color;
-  text-wrap: balance;   // even line lengths if it wraps to three lines
+  text-wrap: balance;
 }
 
 .profile-links {
@@ -503,6 +508,7 @@ blockquote {
   .profile-desc {
     grid-area: desc;
     align-self: start;
+    width: auto;
   }
 
   .lang-switch { grid-column: 1 / -1; }
