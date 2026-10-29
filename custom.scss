@@ -29,13 +29,12 @@ $line-height-base: 1.7;
 
 $size-text: 1rem;      // all running text: profile, menu, body, lists
 $size-desc: 0.9rem;    // description under your name (fits on two lines)
-$size-button: 0.85rem; // CV / LinkedIn / Email / ORCID buttons
 $size-h3: 1.4rem;      // Working Papers, Chapters, Book Reviews
 $size-h2: 1.85rem;     // section headers
-$size-name: $size-h2;  // your name in the sidebar: same size as the section headers
+$size-name: 2.05rem;    // your name in the sidebar: as wide as the photo
 
 // Layout
-$sidebar-width: 12rem;   // = photo width = width of the name
+$sidebar-width: 14rem;   // = photo width = width of the button row
 $main-width: 60rem;      // upper limit; the column normally fills the space available
 $top-space: 2.75rem;     // space under the navbar; top of photo = top of first heading
 $nav-height: 3.4rem;     // green navbar with the section menu
@@ -120,8 +119,8 @@ blockquote {
 }
 
 .site-sidebar {
-  // The box reaches 2.5rem into the gap (without moving anything), so the name and
-  // description can run slightly past the photo without being cut off
+  // The box reaches 2.5rem into the gap (without moving anything), so nothing that runs
+  // slightly past the photo gets cut off
   margin-right: -2.5rem;
   position: sticky;
   top: $nav-height;
@@ -162,50 +161,47 @@ blockquote {
   line-height: 1.15;
   letter-spacing: -0.02em;
   white-space: nowrap;
+  text-align: center;
   color: $accent;
   margin-bottom: 0.5rem;
 }
 
 .profile-desc {
-  // May run about 2rem past the photo, into the empty gap, so every language fits on two lines
-  width: calc(100% + 2rem);
   font-size: $size-desc;
   line-height: 1.5;
+  text-align: center;
   color: $body-color;
   text-wrap: balance;
 }
 
 .profile-links {
-  // Buttons side by side, wrapping onto a second row; each row stretches to the photo's width
+  // Three small outlined buttons on one row, as wide as the photo
   ul {
     list-style: none;
     padding: 0;
-    margin: 1.2rem 0 0;
+    margin: 1rem 0 0;
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.35rem;
   }
 
   li {
-    flex: 1 1 auto;
+    flex: 1 1 0;
+    min-width: 0;
     margin: 0;
-    font-size: $size-button;
+    font-size: 0.78rem;
     line-height: 1.4;
   }
 
-  // First button (Email) gets its own row; the others share the row below
-  li:first-child { flex-basis: 100%; }
-
-  // Outlined buttons, filled on hover
   a {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.4rem;
-    padding: 0.3rem 0.5rem;
+    gap: 0.3rem;
+    padding: 0.25rem 0.3rem;
     border: 1px solid $accent;
-    border-radius: 6px;
+    border-radius: 5px;
     color: $accent;
+    white-space: nowrap;
     transition: background-color 0.2s ease, color 0.2s ease;
 
     &:hover,
@@ -221,10 +217,7 @@ blockquote {
   .bi {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    width: 0.9rem;
-    height: 0.9rem;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     line-height: 1;
   }
 }
@@ -235,52 +228,42 @@ blockquote {
   align-items: center;
   justify-content: center;
   flex: none;
-  width: 0.85rem;
-  height: 0.85rem;
-  margin: 0 0.025rem;
+  width: 0.75rem;
+  height: 0.75rem;
   border-radius: 50%;
   background: currentColor;
 
   &::before {
     content: "iD";
     color: $body-bg;
-    font: 700 0.45rem/1 $font-family-sans-serif;
+    font: 700 0.4rem/1 $font-family-sans-serif;
     letter-spacing: -0.02em;
   }
 }
 
-// ---- Language toggle (EN | FR | ES) -----------------------------------------
+// ---- The two other languages, as plain words under the links ------------------
 
 .lang-switch {
-  margin-top: 0.5rem;
+  margin-top: 0.6rem;
 
   p {
     display: flex;
+    justify-content: center;   // centred under the buttons
     margin: 0;
-    border: 1px solid $accent;
-    border-radius: 6px;
-    overflow: hidden;
+    white-space: nowrap;
   }
 
   a {
-    flex: 1;
-    padding: 0.2rem 0;
-    text-align: center;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    font-weight: 500;
     line-height: 1.4;
-    color: $accent;
 
-    & + a { border-left: 1px solid $accent; }
-
-    &:hover {
-      background: rgba($accent, 0.1);
+    & + a::before {
+      content: "·";
+      display: inline-block;
+      color: #b5b5b5;
+      margin: 0 0.55rem;
       text-decoration: none;
-    }
-
-    &.on {
-      background: $accent;
-      color: $body-bg;
-      font-weight: 600;
     }
   }
 }
@@ -503,12 +486,13 @@ blockquote {
     font-size: 1.7rem;
     margin-bottom: 0.2rem;
     white-space: normal;
+    text-align: left;
   }
 
   .profile-desc {
     grid-area: desc;
     align-self: start;
-    width: auto;
+    text-align: left;
   }
 
   .lang-switch { grid-column: 1 / -1; }
@@ -517,9 +501,6 @@ blockquote {
     grid-area: links;
 
     ul { margin-top: 1rem; }
-
-    // two buttons per row
-    li { flex-basis: calc(50% - 0.25rem); }
   }
 
   .nav-in {

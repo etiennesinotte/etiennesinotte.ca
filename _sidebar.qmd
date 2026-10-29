@@ -16,7 +16,7 @@ PhD Candidate in Political Science at McGill University
 :::
 
 ::: {.lang-switch role="navigation" aria-label="Language"}
-[EN](index.html){.on aria-current="page" title="English"} [FR](indexFR.html){title="Français"} [ES](indexES.html){title="Español"}
+[Français](indexFR.html){lang="fr" hreflang="fr"} [Español](indexES.html){lang="es" hreflang="es"}
 :::
 :::
 

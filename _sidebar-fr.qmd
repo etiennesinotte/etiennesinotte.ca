@@ -16,7 +16,7 @@ Candidat au doctorat en science politique à l'Université McGill
 :::
 
 ::: {.lang-switch role="navigation" aria-label="Langue"}
-[EN](index.html){title="English"} [FR](indexFR.html){.on aria-current="page" title="Français"} [ES](indexES.html){title="Español"}
+[English](index.html){lang="en" hreflang="en"} [Español](indexES.html){lang="es" hreflang="es"}
 :::
 :::
 
